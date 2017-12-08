@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Hangman</string>
+    <string name="imageDesc">HangmanImage</string>
+    <string name="buttonMain_Start">Start</string>
+    <string name="buttonMain_Dictionary">Dictionary</string>
+    <string name="buttonMain_Exit">Exit</string>
+
 </resources>

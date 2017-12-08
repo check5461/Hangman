@@ -7,49 +7,44 @@
     tools:context="com.hangman.illegaldisease.hangman.MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView_Main"
+            android:contentDescription="@string/imageDesc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
+            android:layout_height="match_parent"
             android:layout_marginTop="17dp"
             app:srcCompat="@drawable/fifthphase" />
 
         <Button
             android:id="@+id/button_main_start"
-            android:layout_width="97dp"
+            android:layout_width="136dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/imageView_Main"
             android:layout_marginTop="31dp"
-            android:text="Start" />
+            android:text="@string/buttonMain_Start" />
 
         <Button
             android:id="@+id/button_main_dictionary"
-            android:layout_width="98dp"
+            android:layout_width="152dp"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/button_main_start"
-            android:layout_alignStart="@+id/button_main_start"
-            android:layout_below="@+id/button_main_start"
             android:layout_marginTop="34dp"
-            android:text="Dictionary" />
+            android:text="@string/buttonMain_Dictionary" />
 
         <Button
             android:id="@+id/button_main_exit"
-            android:layout_width="99dp"
+            android:layout_width="149dp"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/button_main_dictionary"
-            android:layout_alignStart="@+id/button_main_dictionary"
-            android:layout_below="@+id/button_main_dictionary"
             android:layout_marginTop="21dp"
-            android:text="Exit" />
+            android:text="@string/buttonMain_Exit" />
 
     </LinearLayout>
 
