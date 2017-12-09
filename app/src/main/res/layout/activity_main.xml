@@ -19,10 +19,10 @@
 
         <ImageView
             android:id="@+id/imageView_Main"
-            android:contentDescription="@string/imageDesc"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="239dp"
             android:layout_marginTop="17dp"
+            android:contentDescription="@string/imageDesc"
             app:srcCompat="@drawable/fifthphase" />
 
         <Button
