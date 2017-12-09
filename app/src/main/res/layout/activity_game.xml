@@ -15,10 +15,10 @@
         tools:layout_editor_absoluteY="0dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView_game"
             android:layout_width="match_parent"
             android:layout_height="227dp"
-            app:srcCompat="@drawable/firstphase" />
+            app:srcCompat="@drawable/first" />
 
         <Space
             android:layout_width="match_parent"

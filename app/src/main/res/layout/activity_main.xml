@@ -23,7 +23,7 @@
             android:layout_height="239dp"
             android:layout_marginTop="17dp"
             android:contentDescription="@string/imageDesc"
-            app:srcCompat="@drawable/fifthphase" />
+            app:srcCompat="@drawable/first" />
 
         <Button
             android:id="@+id/button_main_start"
