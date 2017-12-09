@@ -6,4 +6,27 @@
     android:layout_height="match_parent"
     tools:context="com.hangman.illegaldisease.hangman.GameActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout_game"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="227dp"
+            app:srcCompat="@drawable/firstphase" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="100px" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
