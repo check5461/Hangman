@@ -24,7 +24,7 @@ public class GameActivity extends AppCompatActivity {
         phaseImage = (ImageView) findViewById(R.id.imageView_game);
         wordView.setText(current_game.get_display_word());
         imageArray = new int[] {R.drawable.first, R.drawable.second,R.drawable.third,R.drawable.fourth,R.drawable.fifth,R.drawable.sixth,R.drawable.seventh};
-        //This is way too ugly, it needs to be in somewhere else. Arrays.xml somehow didnt work.
+        //This is way too ugly, it needs to be in somewhere else. Arrays.xml somehow didn't work.
     }
 
     public void new_guess(View view) {
@@ -34,23 +34,23 @@ public class GameActivity extends AppCompatActivity {
 
         String new_guess = letter_guessed.getText().toString();
         if (!new_guess.equals("")) {
-            if(current_game.try_to_insert_letter(new_guess)){
-
-            }
-            else{
-                //TODO : Load the next image here
+            if(current_game.try_to_insert_letter(new_guess) == false){
                 phase++;
                 phaseImage.setImageResource(imageArray[phase]);
             }
             if(phase == 6){ //Sixth phase
                 phase = 0;
-                //Game over stuff
+                Toast.makeText(getApplicationContext(), "You failed to guess " + current_game.get_raw_word().toUpperCase(), Toast.LENGTH_LONG).show();
+                phaseImage.setImageResource(imageArray[phase]);
+                reset(view);
             }
             wordView.setText(current_game.get_display_word());
             letter_guessed.setText("");
 
             if (current_game.word_completed()) {
                 Toast.makeText(getApplicationContext(), "Congrats!!!! \n You guessed " + current_game.get_raw_word().toUpperCase() + " correctly", Toast.LENGTH_LONG).show();
+                phase = 0;
+                phaseImage.setImageResource(imageArray[phase]);
                 //TODO : add word here to the dictionary
                 reset(view);
             }

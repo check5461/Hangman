@@ -26,6 +26,10 @@ public class CurrentGameStatus {
             wordToGuess.insert_letter(guessed_letter);
             return true;
         } else {
+            if(wordToGuess.letter_already_in_word(guessed_letter)){
+                //User entered the word he/she already did once, also accepted.
+                return true;
+            }
             return false;
         }
     }
