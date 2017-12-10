@@ -50,7 +50,6 @@ public class WordToGuess {
         for (int i=0;i < current_state.length(); i++)
         {
             char w = current_state.toLowerCase().charAt(i);
-            System.out.println("Current char: " + c + " word char: " + w);
             if (w == c)
             {
                 return true;
