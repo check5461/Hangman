@@ -1,5 +1,8 @@
 package com.hangman.illegaldisease.hangman;
 
+import java.net.NetworkInterface;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -15,4 +18,5 @@ public class GenerateWord {
         randomGenerator.nextInt(words.length);
         return words[randomGenerator.nextInt(words.length)];
     }
+
 }

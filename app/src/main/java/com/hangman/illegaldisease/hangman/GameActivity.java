@@ -3,9 +3,13 @@ package com.hangman.illegaldisease.hangman;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +25,7 @@ import java.util.List;
 public class GameActivity extends AppCompatActivity {
     private int phase = 0; //We will start at first phase, up to sixth
     ImageView phaseImage;
+    Button guessButton;
     CurrentGameStatus current_game = new CurrentGameStatus();
     int[] imageArray;
 
@@ -41,7 +46,18 @@ public class GameActivity extends AppCompatActivity {
 
         TextView wordView = (TextView) findViewById(R.id.textView_game_word);
         TextView letter_guessed = (TextView) findViewById(R.id.editText_game);
-
+        letter_guessed.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent event) {
+                if (event.getAction()!=KeyEvent.ACTION_DOWN)
+                    return false;
+                if(keyCode == KeyEvent.KEYCODE_ENTER ){
+                    guessButton.performClick();
+                    return true; //TODO : Here doesnt work. Just nevermind.
+                }
+                return false;
+            }
+        });
         String new_guess = letter_guessed.getText().toString();
         if (!new_guess.equals("")) {
             if(current_game.try_to_insert_letter(new_guess) == false){
@@ -88,6 +104,7 @@ public class GameActivity extends AppCompatActivity {
         TextView wordView = (TextView) findViewById(R.id.textView_game_word);
         phaseImage = (ImageView) findViewById(R.id.imageView_game);
         wordView.setText(current_game.get_display_word());
+        guessButton = (Button) findViewById(R.id.button_game_guess);
         imageArray = new int[] {R.drawable.first, R.drawable.second,R.drawable.third,R.drawable.fourth,R.drawable.fifth,R.drawable.sixth,R.drawable.seventh};
         //This is way too ugly, it needs to be in somewhere else. Arrays.xml somehow didn't work.
         database = FirebaseDatabase.getInstance();

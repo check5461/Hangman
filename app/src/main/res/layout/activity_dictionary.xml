@@ -7,21 +7,22 @@
     tools:context="com.hangman.illegaldisease.hangman.DictionaryActivity">
 
     <LinearLayout
+        android:id="@+id/linear_layout_dict"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="top|center_vertical|center"
         android:orientation="vertical">
 
         <ListView
             android:id="@+id/listView_dictionary"
             android:layout_width="match_parent"
-            android:layout_height="440dp">
+            android:layout_height="wrap_content">
 
         </ListView>
 
         <Button
             android:id="@+id/button_dictionary_clear"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Clear" />
 
